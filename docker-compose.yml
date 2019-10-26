@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  rust-cli:
+    image: rust:1-stretch
+    command: tail -f /dev/null
+    volumes:
+      - './:/app'
