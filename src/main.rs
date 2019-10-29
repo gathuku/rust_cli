@@ -1,4 +1,7 @@
+
 use std::env;
+// use self::crypto::digest::Digest;
+// use self::crypto::sha3::Sha3;
 
 struct ToDoItem{
     name: String,
@@ -8,6 +11,7 @@ struct ToDoItem{
 struct ToDoList{
     list:Vec<ToDoItem>
 }
+
 
 impl ToDoItem {
     fn new(name:String)-> ToDoItem{
@@ -32,15 +36,20 @@ impl ToDoList {
     }
 
     fn print(&self){
-        for item in &self.list {
-          println!("{} - {}", item.name,item.completed)
+        for(index,item)  in self.list.iter().enumerate() {
+          println!("[{}] - {} - {}",index, item.name,item.completed)
         }
+    }
+
+    fn remove(&mut self, index:usize){
+        self.list.remove(index);
     }
 }
 
 enum Command{
     Get,
-    Add(String)
+    Add(String),
+    Done(usize)
 }
 
 fn main() {
@@ -49,6 +58,7 @@ let args: Vec<String> = env::args().collect();
 let command = match args[1].as_str() {
     "get"=>Command::Get,
     "add"=> Command::Add(args[2].clone()),
+    "done"=>Command::Done(args[2].parse().expect("something")),
     _=> panic!("Please provide a valid command")
 };
 
@@ -64,6 +74,10 @@ match command {
     Command::Add(_task)=>{
         let task=args[2].clone();
         todo_list.add_to_list(task);
+        todo_list.print()
+    },
+    Command::Done(index) => {
+        todo_list.remove(index);
         todo_list.print()
     }
 }
