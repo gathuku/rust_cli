@@ -1,7 +1,8 @@
 
 use std::env;
-// use self::crypto::digest::Digest;
-// use self::crypto::sha3::Sha3;
+
+// looks for the last file
+mod crypto;
 
 struct ToDoItem{
     name: String,
@@ -37,7 +38,7 @@ impl ToDoList {
 
     fn print(&self){
         for(index,item)  in self.list.iter().enumerate() {
-          println!("[{}] - {} - {}",index, item.name,item.completed)
+          println!("[{}] - {} - {} -{:?}",index, item.name,item.completed,crypto::hash("test".to_string()))
         }
     }
 
@@ -53,6 +54,8 @@ enum Command{
 }
 
 fn main() {
+
+    println!("{:#?}",crypto::hash("test".to_string()));
 let args: Vec<String> = env::args().collect();
 // println!("{:#?}", args);
 let command = match args[1].as_str() {

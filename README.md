@@ -1,11 +1,17 @@
 ## Simple CLI application using Rust
 
-### Run app 
+### Run app
 run using docker
 ```
 docker-compose up
 ```
-### Run commnand 
+### Run commnand
 ```
 cargo run rust_cli --help
 ```
+
+### Implemeted
+[x] Command Line arguments
+[x] Structs
+[x] Crypto 
+- Hashing(Sha256)
