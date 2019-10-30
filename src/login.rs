@@ -1,5 +1,6 @@
 extern crate rustyline;
 
+
 use rustyline::error::ReadlineError;
 use rustyline::Editor;
 use console::style;
