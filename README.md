@@ -16,3 +16,5 @@ cargo run rust_cli --help
 [x] Crypto
 - Hashing(Sha256)
 [x] API [reqwest](https://github.com/seanmonstar/reqwest)
+[X] Terminal Inputs with [Rustline](https://github.com/kkawakam/rustyline)
+[X] Terminal colors with [console](https://crates.io/crates/console)

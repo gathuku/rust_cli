@@ -51,6 +51,7 @@ impl ToDoList {
 
 enum Command{
     Get,
+    Login,
     Add(String),
     Done(usize)
 }
@@ -59,11 +60,12 @@ fn main() {
 
     // println!("{:#?}",crypto::hash("test".to_string()));
     // reqwest::test();
-login::login_inputs();
+// login::login_inputs();
 let args: Vec<String> = env::args().collect();
 // println!("{:#?}", args);
 let command = match args[1].as_str() {
     "get"=>Command::Get,
+    "login"=>Command::Login,
     "add"=> Command::Add(args[2].clone()),
     "done"=>Command::Done(args[2].parse().expect("something")),
     _=> panic!("Please provide a valid command")
@@ -78,6 +80,7 @@ todo_list.add_to_list("Learn Rust lang".to_string());
 
 match command {
     Command::Get => todo_list.print(),
+    Command::Login => login::login_inputs(),
     Command::Add(_task)=>{
         let task=args[2].clone();
         todo_list.add_to_list(task);
