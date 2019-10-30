@@ -3,6 +3,8 @@ use std::env;
 
 // looks for the last file
 mod crypto;
+mod reqwest;
+mod login;
 
 struct ToDoItem{
     name: String,
@@ -55,7 +57,9 @@ enum Command{
 
 fn main() {
 
-    println!("{:#?}",crypto::hash("test".to_string()));
+    // println!("{:#?}",crypto::hash("test".to_string()));
+    // reqwest::test();
+login::login_inputs();
 let args: Vec<String> = env::args().collect();
 // println!("{:#?}", args);
 let command = match args[1].as_str() {

@@ -13,5 +13,6 @@ cargo run rust_cli --help
 ### Implemeted
 [x] Command Line arguments
 [x] Structs
-[x] Crypto 
+[x] Crypto
 - Hashing(Sha256)
+[x] API [reqwest](https://github.com/seanmonstar/reqwest)

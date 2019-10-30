@@ -11,6 +11,6 @@ pub fn hash(payload:String)-> String{
    let mut sha = Sha256::new();
    sha.input_str(&payload);
   let result= sha.result_str();
-  return result.to_string();
+  return result
    // println!("{:?}", sha.result_str() );
 }
