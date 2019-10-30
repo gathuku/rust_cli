@@ -11,10 +11,9 @@ cargo run rust_cli --help
 ```
 
 ### Implemeted
-[x] Command Line arguments
-[x] Structs
-[x] Crypto
+- Command Line arguments
+- Crypto
 - Hashing(Sha256)
-[x] API [reqwest](https://github.com/seanmonstar/reqwest)
-[X] Terminal Inputs with [Rustline](https://github.com/kkawakam/rustyline)
-[X] Terminal colors with [console](https://crates.io/crates/console)
+- API [reqwest](https://github.com/seanmonstar/reqwest)
+- Terminal Inputs with [Rustline](https://github.com/kkawakam/rustyline)
+- Terminal colors with [console](https://crates.io/crates/console)
